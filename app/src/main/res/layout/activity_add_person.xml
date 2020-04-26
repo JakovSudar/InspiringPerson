@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:paddingTop="30dp"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".AddPersonActivity"
+    android:gravity="center_horizontal"
+    >
+
+    <EditText
+        android:id="@+id/newName"
+        android:layout_width="match_parent"
+        android:hint="Name nad surname"
+        android:layout_height="60dp"/>
+    <EditText
+        android:id="@+id/newDate"
+        android:hint="Date of birth"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"/>
+    <EditText
+        android:id="@+id/newDescription"
+        android:layout_width="match_parent"
+        android:hint="Description"
+        android:layout_height="60dp"/>
+    <EditText
+        android:id="@+id/newImage"
+        android:layout_width="match_parent"
+        android:hint="Image URL"
+        android:layout_height="60dp"/>
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/addBtn"
+        android:layout_marginTop="30dp"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:text="Add"/>
+
+</androidx.appcompat.widget.LinearLayoutCompat>
