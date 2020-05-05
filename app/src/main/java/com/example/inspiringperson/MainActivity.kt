@@ -50,25 +50,9 @@ class MainActivity : AppCompatActivity() {
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         when (requestCode) {
-            REQUEST_PERSON -> { if(resultCode==Activity.RESULT_OK)createPerson(data)
+            REQUEST_PERSON -> { if(resultCode==Activity.RESULT_OK)adapter.refreshData(InspiringPersonRepository.persons)
             }
         }
-    }
-
-    private fun createPerson(data: Intent?) {
-        var persons = InspiringPersonRepository.persons
-
-        val newPerson = Person(persons.size,data?.getStringExtra(KEY_NAME)?:"undefined",
-            data?.getStringExtra(KEY_DATE)?:"undefined",
-            data?.getStringExtra(KEY_DESCR)?:"undefined",
-            data?.getStringExtra(KEY_IMG),
-            listOf("New users doesn't have quote")
-        )
-
-        InspiringPersonRepository.add(newPerson)
-
-        adapter.refreshData(InspiringPersonRepository.persons)
-
     }
 
 

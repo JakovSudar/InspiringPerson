@@ -17,26 +17,20 @@ class AddPersonActivity : AppCompatActivity() {
 
     private fun setUpUi() {
         addBtn.setOnClickListener(){
-            returnPerson()
+            createPerson()
         }
     }
-
-    private fun returnPerson() {
+    private fun createPerson() {
         val name = newName.text.toString()
         val date = newDate.text.toString()
         val descr = newDescription.text.toString()
         val img = newImage.text.toString()
-
+        val quotes = newQuotes.text.toString().split(";")
         if(name.isNotBlank() && date.isNotBlank() && descr.isNotBlank()){
-            val resultIntent = Intent()
-            resultIntent.putExtra(MainActivity.KEY_NAME,name)
-            resultIntent.putExtra(MainActivity.KEY_DATE,date)
-            resultIntent.putExtra(MainActivity.KEY_DESCR,descr)
-            resultIntent.putExtra(MainActivity.KEY_IMG,img)
-
-            this.setResult(Activity.RESULT_OK,resultIntent)
+            val person = Person(InspiringPersonRepository.persons.size,name,date,descr,img, quotes)
+            InspiringPersonRepository.add(person)
+            this.setResult(Activity.RESULT_OK)
             this.finish()
-
         }
         else Toast.makeText(this,"Empty field!",Toast.LENGTH_SHORT).show()
     }

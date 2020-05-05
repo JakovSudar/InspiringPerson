@@ -30,6 +30,11 @@
         android:layout_width="match_parent"
         android:hint="Image URL"
         android:layout_height="60dp"/>
+    <EditText
+        android:id="@+id/newQuotes"
+        android:layout_width="match_parent"
+        android:hint="Quotes, separated with ;"
+        android:layout_height="60dp"/>
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/addBtn"
         android:layout_marginTop="30dp"
